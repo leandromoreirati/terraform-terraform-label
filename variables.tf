@@ -4,7 +4,7 @@ variable "namespace" {
   description = "Namespace, which could be your organization name or abbreviation, e.g. 'eg' or 'cp'"
 }
 
-variable "stage" {
+variable "environment" {
   type        = string
   default     = ""
   description = "Stage, e.g. 'prod', 'staging', 'dev'"
@@ -14,6 +14,24 @@ variable "name" {
   type        = string
   default     = ""
   description = "Solution name, e.g. `app` or `jenkins`"
+}
+
+variable "business_owner" {
+  type        = string
+  default     = ""
+  description = "Resource business owner tag for billing purposes"
+}
+
+variable "application" {
+  type        = string
+  default     = ""
+  description = "Application name, e.g. 'web' or 'jenkins'"
+}
+
+variable "service" {
+  type        = string
+  default     = ""
+  description = "Service that application is part of, e.g. 'finance', 'legal'"
 }
 
 variable "delimiter" {
@@ -34,14 +52,8 @@ variable "tags" {
   description = "Additional tags (e.g. `map('BusinessUnit','XYZ')`"
 }
 
-variable "enabled" {
-  type        = bool
-  default     = true
-  description = "Set to false to prevent the module from creating any resources"
-}
-
-variable "convert_case" {
-  type        = bool
-  default     = true
-  description = "Convert fields to lower case"
+variable "board" {
+  type        = string
+  default     = ""
+  description = "Board to which the team belongs."
 }
